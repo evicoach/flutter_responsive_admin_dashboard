@@ -9,6 +9,7 @@ import 'components/recent_files.dart';
 import 'components/storage_details.dart';
 
 class DashboardScreen extends StatelessWidget {
+  static final routeName = "/dashboard-screen";
   @override
   Widget build(BuildContext context) {
     return SafeArea(

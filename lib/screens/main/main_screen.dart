@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
+  static final routeName = "/main-screen";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
