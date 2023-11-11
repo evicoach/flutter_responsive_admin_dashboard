@@ -94,10 +94,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(height: 50),
                     const Text("Phone number"),
                     AppWidget.buildUserInput(
-                      focusedBorderColor: AppColors.primaryColor,
+                      focusedBorderColor: AppColors.white,
                       enabledBorderColor: AppColors.borderGrey,
-                      fillColor: AppColors.white,
-                      filled: true,
+                      // fillColor: AppColors.white,
+                      // filled: true,
                       onSaved: (val) {
                         loginParams.username = "$val";
                       },
@@ -125,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         maxLines: 1,
                         labelStyle: AppWidget.hintStyle,
                         floatingLabelBehavior: FloatingLabelBehavior.never,
-                        focusedBorderColor: AppColors.primaryColor,
+                        focusedBorderColor: AppColors.white,
                         enabledBorderColor: AppColors.greyLineColor,
                         borderRadius: BorderRadius.circular(8),
                         obscureText: !_passwordVisible,

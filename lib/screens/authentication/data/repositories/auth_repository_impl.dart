@@ -18,7 +18,6 @@ import '../models/user_model.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
-
   final AuthLocalDatasource localDataSource;
 
   const AuthRepositoryImpl({

@@ -1,7 +1,7 @@
 import '../../../../../core/data/model/params.dart';
 
 class NewCouponParam extends Params {
-  String? id;
+  int? id;
   String? provider;
   bool? active;
   bool? week;

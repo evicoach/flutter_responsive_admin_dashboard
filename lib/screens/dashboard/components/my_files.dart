@@ -1,5 +1,6 @@
 
 import 'package:admin/responsive.dart';
+import 'package:admin/screens/new_coupon/new_coupon_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:admin/models/MyFiles.dart';
 import '../../../constants.dart';
@@ -30,7 +31,10 @@ class MyFiles extends StatelessWidget {
                       defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
                 ),
               ),
-              onPressed: () {},
+              onPressed: (){
+                print("Navigating to new coupon screen.");
+                Navigator.of(context).pushNamed(NewCouponScreen.routeName);
+              },
               icon: Icon(Icons.add),
               label: Text("Add New"),
             ),
