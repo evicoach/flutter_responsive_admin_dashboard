@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontSize: scaledFontSize(30, context)),
                     ),
                     const SizedBox(height: 8),
-                    const Text("Login to your already existing Vida account.",
+                    const Text("Login to your already existing evmaOdds admin account.",
                         style: TextStyle(
                           color: AppColors.appGreen,
                           fontWeight: FontWeight.w500,
