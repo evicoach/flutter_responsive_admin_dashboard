@@ -8,7 +8,6 @@ import '../../../../core/presentation/app_widget.dart';
 import '../../../../utility/app_colors.dart';
 import '../../../../utility/ui_utils.dart';
 import '../../../../utility/validator.dart';
-import '../../../dashboard/dashboard_screen.dart';
 import '../../data/models/params/login_params.dart';
 import '../bloc/auth_bloc.dart';
 import '../bloc/user_bloc.dart';
@@ -88,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(height: 8),
                     const Text("Login to your already existing Vida account.",
                         style: TextStyle(
-                          color: AppColors.black,
+                          color: AppColors.appGreen,
                           fontWeight: FontWeight.w500,
                         )),
                     const SizedBox(height: 50),

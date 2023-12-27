@@ -1,6 +1,5 @@
 class Endpoints {
-  // static const baseUrl = 'https://columnhack.com/api/v1';
-  static const baseUrl = 'http://localhost:7070/api/v1';
+  static const baseUrl = 'https://evicoach.com/forecast/api/v1';
 
   static const initializePayment = "/payments/initialize";
   static const verifyPayment = "/payments/verify";

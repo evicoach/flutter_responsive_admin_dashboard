@@ -6,7 +6,12 @@ import 'package:admin/screens/authentication/domain/usecases/fetch_user_info.dar
 import 'package:admin/screens/authentication/domain/usecases/login.dart';
 import 'package:admin/screens/authentication/presentation/bloc/auth_bloc.dart';
 import 'package:admin/screens/authentication/presentation/bloc/user_bloc.dart';
+import 'package:admin/screens/dashboard/data/datasources/dashboard_remote_datasource.dart';
+import 'package:admin/screens/dashboard/data/repositories/dashboard_repository_impl.dart';
+import 'package:admin/screens/dashboard/domain/repositories/dashboard_repository.dart';
+import 'package:admin/screens/dashboard/domain/usecases/create_coupons.dart';
 import 'package:admin/screens/dashboard/domain/usecases/fetch_coupons.dart';
+import 'package:admin/screens/dashboard/presentation/bloc/coupon_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,6 +28,9 @@ Future<void> init() async {
       ));
 
   serviceLocator.registerFactory(() => UserBloc());
+  serviceLocator.registerFactory(() => CouponBloc(serviceLocator()));
+  serviceLocator
+      .registerFactory(() => CreateCoupons(repository: serviceLocator()));
   serviceLocator.registerLazySingleton<FetchUserInfo>(
       () => FetchUserInfo(repository: serviceLocator()));
 
@@ -30,6 +38,12 @@ Future<void> init() async {
         remoteDataSource: serviceLocator(),
         localDataSource: serviceLocator(),
       ));
+
+  serviceLocator
+      .registerLazySingleton<DashboardRepository>(() => DashboardRepositoryImpl(
+            remoteDataSource: serviceLocator(),
+            localDataSource: serviceLocator(),
+          ));
 
   serviceLocator.registerLazySingleton<FetchCoupons>(
       () => FetchCoupons(repository: serviceLocator()));
@@ -41,4 +55,6 @@ Future<void> init() async {
       () => AuthLocalDatasourceImpl(serviceLocator()));
   serviceLocator.registerLazySingleton<AuthRemoteDataSource>(
       () => AuthRemoteDataSourceImpl(serviceLocator()));
+  serviceLocator.registerLazySingleton<DashboardRemoteDataSource>(
+      () => DashboardRemoteDataSourceImpl(serviceLocator()));
 }

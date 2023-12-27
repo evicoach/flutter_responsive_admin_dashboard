@@ -82,7 +82,10 @@ class _NewCouponItemState extends State<NewCouponItem> {
                 "Select bet provider",
                 style: TextStyle(color: bgColor),
               ),
-              whenElementSelected: (item) {}),
+              whenElementSelected: (item) {
+                print("${item.toJson()} has been selected.");
+                widget.coupon.provider = (item as CouponProvider).slug;
+              }),
           SizedBox(height: defaultPadding/2),
           Row(
             children: [

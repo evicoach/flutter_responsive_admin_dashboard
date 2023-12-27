@@ -1,5 +1,5 @@
 class CouponModel {
-  String? sId;
+  String? id;
   String? provider;
   bool? active;
   bool? week;
@@ -8,12 +8,11 @@ class CouponModel {
   String? code;
   String? description;
   String? expiresAt;
-  int? iV;
   String? createdAt;
   String? updatedAt;
 
   CouponModel({
-    this.sId,
+    this.id,
     this.provider,
     this.active,
     this.week,
@@ -22,12 +21,12 @@ class CouponModel {
     this.code,
     this.description,
     this.expiresAt,
-    this.iV,
     this.createdAt,
     this.updatedAt,
   });
 
   CouponModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
     provider = json['provider'];
     active = json['active'];
     week = json['week'];

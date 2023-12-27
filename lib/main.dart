@@ -1,6 +1,7 @@
 import 'package:admin/constants.dart';
 import 'package:admin/controllers/MenuAppController.dart';
 import 'package:admin/screens/authentication/presentation/screens/login_screen.dart';
+import 'package:admin/screens/dashboard/presentation/bloc/coupon_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,6 +38,9 @@ class MyApp extends StatelessWidget {
             create: (BuildContext context) => serviceLocator(),
           ),
           BlocProvider<UserBloc>(
+            create: (BuildContext context) => serviceLocator(),
+          ),
+          BlocProvider<CouponBloc>(
             create: (BuildContext context) => serviceLocator(),
           ),
         ],
